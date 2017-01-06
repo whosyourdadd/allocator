@@ -6,7 +6,9 @@
 
 #include "extent.h"
 
-#define CHUNK_SIZE ((size_t)4096 * 1024)
+//#define CHUNK_SIZE ((size_t)4096 * 1024)
+#define CHUNK_SIZE ((size_t)4096 * 4096)
+//#define CHUNK_SIZE ((size_t)  8*1024*1024 * 1024)
 #define CHUNK_MASK ((size_t)(CHUNK_SIZE - 1))
 // Return the smallest chunk size multiple that is >= s.
 #define CHUNK_CEILING(s) (((s) + CHUNK_MASK) & ~CHUNK_MASK)
