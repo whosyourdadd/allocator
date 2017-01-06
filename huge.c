@@ -1,5 +1,5 @@
 #include <string.h>
-
+#include <stdio.h> //
 #include "chunk.h"
 #include "extent.h"
 #include "huge.h"
@@ -220,6 +220,7 @@ void *huge_realloc(struct thread_cache *cache, void *ptr, size_t old_size, size_
         }
         return huge_move_expand(cache, ptr, old_size, new_real_size);
     } else if (new_real_size < old_size) {
+
         huge_no_move_shrink(ptr, old_size, new_real_size);
     }
     return ptr;

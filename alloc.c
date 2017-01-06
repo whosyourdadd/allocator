@@ -14,7 +14,7 @@
 #include <sys/resource.h>
 #include <sys/sysinfo.h>
 #include <unistd.h>
-
+#include <stdio.h> //
 #include "arena.h"
 #include "bump.h"
 #include "chunk.h"
@@ -827,8 +827,8 @@ EXPORT void *realloc(void *ptr, size_t size) {
             return ptr;
         }
     }
-
     if (old_size > MAX_LARGE && size > MAX_LARGE) {
+
         return huge_realloc(cache, ptr, old_size, CHUNK_CEILING(size));
     }
 
